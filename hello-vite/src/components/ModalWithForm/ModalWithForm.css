@@ -1,0 +1,141 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #0000004d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  z-index: 1000;
+  width: 100vw;
+}
+
+.modal_opened {
+  visibility: visible;
+}
+
+.modal__title {
+  margin: 0;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 20px;
+  color: #1a1b22;
+}
+
+.modal__close {
+  background-color: transparent;
+  background-image: url(../../assets/close.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.modal__content {
+  position: relative;
+  background-color: #fff;
+  padding: 28px 28px 36px;
+  max-width: 430px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  gap: 24px;
+}
+
+.modal__label {
+  height: 52px;
+  margin-top: 20px;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #2f71e5;
+}
+
+.modal__input {
+  display: block;
+  width: 100%;
+  border: none;
+  margin-top: 10px;
+  border-bottom: 1px solid #000;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.modal__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal__submit {
+  padding: 0;
+  width: 358px;
+  height: 36px;
+  margin-top: 20px;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #b6bcbf;
+  border: none;
+  background: #e6e8eb;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.modal__btn {
+  border: none;
+  background-color: transparent;
+  font-family: "Inter", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #2f71e5;
+  cursor: pointer;
+}
+
+.modal__submit:hover {
+  background: #2f71e5;
+}
+
+@media (max-width: 725px) {
+  .modal {
+    max-height: fit-content;
+    padding: 0;
+    margin-top: 80px;
+  }
+
+  .modal__close {
+    top: -45px;
+    right: 16px;
+    height: 24px;
+    width: 24px;
+  }
+
+  .modal__submit {
+    width: 270px;
+    height: 64px;
+  }
+}
