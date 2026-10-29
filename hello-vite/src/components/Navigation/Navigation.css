@@ -1,0 +1,83 @@
+@font-face {
+  font-family: Roboto Slab;
+  src: url("../../vendor/Fonts/roboto-400-regular.woff");
+  src: url("../../vendor/Fonts/roboto-400-regular.woff2");
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.navigation__title {
+  color: white;
+  margin-top: 80px;
+  padding: 0;
+  width: 550px;
+  font-family: "Roboto Slab", "Georgia", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 64px;
+  letter-spacing: 0px;
+}
+
+.navigation__description {
+  color: white;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+@media (max-width: 950px) {
+  .navigation {
+    width: 100%;
+    height: 100%;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navigation__title {
+    font-size: 36px;
+    line-height: 40px;
+    width: 100%;
+    width: 385px;
+    margin: 20px auto 20px;
+    padding: 0;
+  }
+
+  .navigation__description {
+    font-size: 18px;
+    line-height: 24px;
+    width: 100%;
+    width: 385px;
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 725px) {
+  .navigation {
+    padding: 0 0 40px;
+  }
+
+  .navigation__title {
+    width: 285px;
+    font-size: 36px;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .navigation__description {
+    width: 285px;
+    font-size: 18px;
+    text-align: left;
+    margin: 0 0 80px;
+  }
+}
