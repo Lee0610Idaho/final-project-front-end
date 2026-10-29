@@ -1,0 +1,153 @@
+@font-face {
+  font-family: Roboto;
+  src: url("../../vendor/Fonts/roboto-slab-400-regular.woff");
+  src: url("../../vendor/Fonts/roboto-500.woff");
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px 0;
+  list-style: none;
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  background-color: white;
+  border-radius: 5%;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.card__image {
+  width: 400px;
+  width: 100%;
+  height: 272px;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.news-card__save-container {
+  position: absolute;
+  display: flex;
+}
+
+.news__card-save-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.news-card__tooltip {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  background-color: white;
+  color: black;
+  padding: 13px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+.card__keyword {
+  background-color: white;
+  bottom: 270px;
+  left: 10px;
+  width: 90px;
+  padding: 10px 20px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.card__news-date {
+  color: #b6bcbf;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+.card__title {
+  font-family: "Roboto Slab", "Georgia", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.card__description {
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.card__signature {
+  color: #b6bcbf;
+  font-family: "Roboto Slab", "Georgia", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+@media (max-width: 950px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(228px, 1fr));
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .cards {
+    box-sizing: border-box;
+  }
+
+  .card {
+    width: 228px;
+    width: 100%;
+  }
+}
