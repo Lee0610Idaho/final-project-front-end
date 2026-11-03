@@ -15,8 +15,7 @@ export default function RegisterModal({
 
   function handleSubmit(e) {
     e.preventDefault();
-    const { email, password, username } = formValues;
-    handleRegistration({ email, password, username });
+    console.log("send to handle registration");
   }
 
   function handleChange(e) {

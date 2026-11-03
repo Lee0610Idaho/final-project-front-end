@@ -40,49 +40,12 @@ function App() {
 
   // Registration
   function handleRegistration({ email, password, username }) {
-    setIsLoading(true);
-    register(email, password, username)
-      .then((res) => {
-        console.log("Registration successful:", res);
-        const userData = { name: username, email };
-        localStorage.setItem("userData", JSON.stringify(userData));
-        return authorize(email, password);
-      })
-      .then((data) => {
-        localStorage.setItem("jwt", data.token);
-        setToken(data.token);
-        return checkToken(data.token);
-      })
-      .then((userData) => {
-        setCurrentUser(userData.data);
-        setIsLoggedIn(true);
-        setShowSuccess(true);
-        closeActiveModal();
-      })
-      .catch((err) => {
-        console.error("Registration or login failed:", err);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    console.log("printing registration data", email, password, username);
   }
 
   // Login
   function handleLogin({ email, password }) {
-    authorize(email, password)
-      .then((data) => {
-        localStorage.setItem("jwt", data.token);
-        setToken(data.token);
-        return checkToken(data.token);
-      })
-      .then((userData) => {
-        setCurrentUser(userData.data);
-        setIsLoggedIn(true);
-        closeActiveModal();
-      })
-      .catch((err) => {
-        console.error("Login failed:", err);
-      });
+    console.log("printing registration data", email, password, username);
   }
 
   // Logout
@@ -96,24 +59,12 @@ function App() {
 
   // Save article
   const handleSaveArticle = (article, keyword) => {
-    const saved = JSON.parse(localStorage.getItem("savedArticles")) || [];
-
-    const isAlreadySaved = saved.some((a) => a.url === article.url);
-    if (isAlreadySaved) return;
-
-    const updatedSavedArticles = [...saved, { ...article, keyword }];
-
-    localStorage.setItem("savedArticles", JSON.stringify(updatedSavedArticles));
-    setSavedArticles(updatedSavedArticles);
+    console.log("save article here");
   };
 
   // Delete article
   const handleDeleteArticle = (articleToDelete) => {
-    const updatedArticles = savedArticles.filter(
-      (article) => article.url !== articleToDelete.url,
-    );
-    setSavedArticles(updatedArticles);
-    localStorage.setItem("savedArticles", JSON.stringify(updatedArticles));
+    console.log("delete article");
   };
 
   useEffect(() => {
@@ -132,6 +83,23 @@ function App() {
     const saved = JSON.parse(localStorage.getItem("savedArticles")) || [];
     setSavedArticles(saved);
   }, []);
+
+  //listen for escape key and close active modal
+  useEffect(() => {
+    if (!activeModal) return;
+
+    const handleEscClose = (e) => {
+      if (e.key === "Escape") {
+        closeActiveModal();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscClose);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, [activeModal]);
 
   return (
     <div className="page">
