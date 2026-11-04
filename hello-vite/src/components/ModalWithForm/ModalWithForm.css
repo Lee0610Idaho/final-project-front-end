@@ -1,3 +1,9 @@
+@font-face {
+  font-family: Roboto, Inter;
+  src: url("../../vendor/Fonts/roboto-500.woff2");
+  src: url("../../vendor/Fonts/inter-400-regular.woff");
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -19,10 +25,11 @@
 
 .modal__title {
   margin: 0;
-  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-  line-height: 20px;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 900, bold;
+  line-height: 100px;
+
   color: #1a1b22;
 }
 
@@ -61,7 +68,7 @@
 .modal__label {
   height: 52px;
   margin-top: 20px;
-  font-family: "Inter", serif;
+  font-family: "Inter";
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
@@ -74,7 +81,7 @@
   border: none;
   margin-top: 10px;
   border-bottom: 1px solid #000;
-  font-family: "Inter", serif;
+  font-family: "Inter";
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
@@ -92,13 +99,13 @@
   width: 358px;
   height: 36px;
   margin-top: 20px;
-  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Roboto";
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;
   color: #b6bcbf;
   border: none;
-  background: #e6e8eb;
+  background: #2f71e5;
   border-radius: 100px;
   cursor: pointer;
 }
@@ -106,7 +113,7 @@
 .modal__btn {
   border: none;
   background-color: transparent;
-  font-family: "Inter", serif;
+  font-family: "Inter";
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;

@@ -15,7 +15,7 @@ export default function RegisterModal({
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("send to handle registration");
+    //handleRegistration(formValues);
   }
 
   function handleChange(e) {

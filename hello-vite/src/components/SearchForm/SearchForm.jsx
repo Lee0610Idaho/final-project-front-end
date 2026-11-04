@@ -26,7 +26,7 @@ function SearchForm({
       setArticles(results);
     } catch (err) {
       console.error("Error fetching news:", err);
-      setSearchError("");
+      setSearchError("Error printing news");
     } finally {
       setLoading(false);
     }

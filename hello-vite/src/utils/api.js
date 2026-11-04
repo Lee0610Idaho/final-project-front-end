@@ -37,54 +37,39 @@ export async function getNews(searchText) {
   }
 }
 
-export async function saveArticle(article, token) {
-  try {
-    const response = await fetch(`${mainApiBaseUrl}/saved-news`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        keyword: article.keyword,
+export function saveArticle(article) {
+  // article is a search result from the NewsAPI
+  return new Promise((resolve) => {
+    resolve({
+      _id: "65f7371e7bce9e7d331b11a0", // another one made up from the generator
+      url: article,
+      title: article.title,
+      imageUrl: article.imagUrl,
+      keyword: article.keyword,
+      text: article.description,
+      date: article.publishedAt,
+      source: article.source.name,
+      link: article.url,
+      image: article.urlToImage,
+    });
+  });
+}
+
+export function fetchSavedArticles() {
+  return new Promise((resolve, reject) =>
+    resolve([
+      {
+        _id: "65f7371e7bce9e7d331b11a0", // another one made up from the generator
+        url: article,
         title: article.title,
+        imageUrl: article.imagUrl,
+        keyword: article.keyword,
         text: article.description,
         date: article.publishedAt,
         source: article.source.name,
         link: article.url,
         image: article.urlToImage,
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`Error saving article: ${response.status}`);
-    }
-
-    const savedArticle = await response.json();
-    return savedArticle;
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
-}
-
-//fetch previously saved articles
-export async function fetchSavedArticles(token) {
-  try {
-    const response = await fetch(`${mainApiBaseUrl}/saved-news`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
       },
-    });
-
-    if (!response.ok) {
-      throw new Error(`Error fetching saved articles: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    console.error(err);
-    return [];
-  }
+    ]),
+  );
 }

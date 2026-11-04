@@ -22,7 +22,7 @@ export default function LoginModal({
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("send to handle log in");
+    //handleLogin(formValues);
   }
 
   return (

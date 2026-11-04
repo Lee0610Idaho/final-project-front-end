@@ -2,7 +2,7 @@ import "./App.css";
 
 import { useState, useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { authorize, register, checkToken } from "../../utils/auth";
+import { authorize, checkToken } from "../../utils/auth";
 
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -46,6 +46,20 @@ function App() {
   // Login function
   function handleLogin({ email, password }) {
     console.log("printing login data", email, password);
+    authorize(email, password)
+      .then((data) => {
+        localStorage.setItem("jwt", data.token);
+        setToken(data.token);
+        return checkToken(data.token);
+      })
+      .then((userData) => {
+        setCurrentUser(userData.data);
+        setIsLoggedIn(true);
+        closeActiveModal();
+      })
+      .catch((err) => {
+        console.error("Login failed:", err);
+      });
   }
 
   // Logout function
@@ -59,17 +73,29 @@ function App() {
 
   // Save article
   const handleSaveArticle = (article, keyword) => {
-    console.log("save article here");
+    const saved = JSON.parse(localStorage.getItem("savedArticles")) || [];
+
+    const isAlreadySaved = saved.some((a) => a.url === article.url);
+    if (isAlreadySaved) return;
+
+    const updatedSavedArticles = [...saved, { ...article, keyword }];
+
+    localStorage.setItem("savedArticles", JSON.stringify(updatedSavedArticles));
+    setSavedArticles(updatedSavedArticles);
   };
 
   // Delete article
   const handleDeleteArticle = (articleToDelete) => {
-    console.log("delete article");
+    const updatedArticles = savedArticles.filter(
+      (article) => article.url !== articleToDelete.url,
+    );
+    setSavedArticles(updatedArticles);
+    localStorage.setItem("savedArticles", JSON.stringify(updatedArticles));
   };
 
-  //at the start of bootup
+  //at the start of bootup, log in and fetch saved articles
   useEffect(() => {
-    const jwt = true; //for simulating loggin in
+    const jwt = true; //for being simulating logging in
     if (jwt) {
       checkToken(jwt)
         .then((userData) => {
