@@ -1,0 +1,83 @@
+.about {
+  background-color: white;
+  z-index: 1;
+  margin-top: 0;
+  display: flex;
+  gap: 50px;
+  padding: 80px 100px;
+}
+
+.about__avatar {
+  border-radius: 50%;
+  width: 464px;
+  height: 464px;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.about__image {
+  max-width: 464px;
+  min-width: 272px;
+}
+
+.about__title {
+  font-family: "Roboto Slab", "Georgia", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  margin-bottom: 24px;
+}
+
+.about__text {
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 16px;
+  max-width: 600px;
+}
+
+@media (max-width: 950px) {
+  .about {
+    padding: 50px 16px;
+    gap: 30px;
+  }
+
+  .about__content {
+    max-width: 424px;
+  }
+
+  .about__avatar {
+    padding-top: 60px;
+  }
+
+  .about__image {
+    width: 232px;
+    height: 232px;
+  }
+}
+
+@media (max-width: 550px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0 16px;
+  }
+
+  .about__avatar {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 272px;
+    height: auto;
+  }
+
+  .about__content {
+    margin-bottom: 80px;
+  }
+
+  .about__title {
+    font-size: 30px;
+  }
+}
