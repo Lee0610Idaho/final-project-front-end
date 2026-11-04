@@ -10,13 +10,22 @@ export const register = (email, password, username) => {
   });
 };
 
+// export const checkToken = (token) => {
+//   return new Promise((resolve) => {
+//     const userData = localStorage.getItem("userData");
+//     if (userData) {
+//       resolve({ data: JSON.parse(userData) });
+//     } else {
+//       resolve({ data: { name: "Fake User", email: "fake@example.com" } });
+//     }
+//   });
+// };
+
 export const checkToken = (token) => {
+  // Pretend we did a fetch request that gave us back a user
   return new Promise((resolve) => {
-    const userData = localStorage.getItem("userData");
-    if (userData) {
-      resolve({ data: JSON.parse(userData) });
-    } else {
-      resolve({ data: { name: "Fake User", email: "fake@example.com" } });
-    }
+    resolve({
+      data: { name: "fake user", email: "fake@example,com", _id: "fake-id" },
+    });
   });
 };

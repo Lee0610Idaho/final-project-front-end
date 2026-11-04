@@ -28,6 +28,7 @@ export default function SavedNews({
   };
 
   console.log(">> Saved Artticles:", savedArticles);
+
   return (
     <section className="saved-news">
       <Header

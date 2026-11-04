@@ -1,5 +1,5 @@
 import "./About.css";
-import Avatar from "../../assets/AboutAuthor.png";
+import Avatar from "../../assets/about-photo.png";
 
 function AboutAuthor() {
   return (
@@ -17,9 +17,10 @@ function AboutAuthor() {
         </p>
         <p className="about__text">
           For API interactions, this project fetches news articles based on user
-          input from an API. The project also features dynamic UI behavior like
-          conditional rendering to create a smooth user experience. This project
-          showcases my skills in frontend development in React.
+          input into the search bar. The project also features dynamic UI
+          behavior like conditional rendering to create a smooth user
+          experience. This project showcases my skills in frontend development
+          in React.
         </p>
       </div>
     </section>

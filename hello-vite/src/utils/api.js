@@ -10,6 +10,7 @@ export const mainApiBaseUrl =
 
 const NEWS_API_KEY = "f50f323a5b934931ba0d8e1feaf82916";
 
+//Get news from API
 export async function getNews(searchText) {
   const toDate = new Date().toISOString().split("T")[0];
   const fromDate = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
@@ -67,6 +68,7 @@ export async function saveArticle(article, token) {
   }
 }
 
+//fetch previously saved articles
 export async function fetchSavedArticles(token) {
   try {
     const response = await fetch(`${mainApiBaseUrl}/saved-news`, {

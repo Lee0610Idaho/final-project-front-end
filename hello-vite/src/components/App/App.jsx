@@ -38,17 +38,17 @@ function App() {
     setIsModalOpen(false);
   };
 
-  // Registration
+  // Registration function
   function handleRegistration({ email, password, username }) {
     console.log("printing registration data", email, password, username);
   }
 
-  // Login
+  // Login function
   function handleLogin({ email, password }) {
-    console.log("printing registration data", email, password, username);
+    console.log("printing login data", email, password);
   }
 
-  // Logout
+  // Logout function
   function handleLogout() {
     closeActiveModal();
     setIsLoggedIn(false);
@@ -67,8 +67,9 @@ function App() {
     console.log("delete article");
   };
 
+  //at the start of bootup
   useEffect(() => {
-    const jwt = localStorage.getItem("jwt");
+    const jwt = true; //for simulating loggin in
     if (jwt) {
       checkToken(jwt)
         .then((userData) => {
@@ -84,7 +85,7 @@ function App() {
     setSavedArticles(saved);
   }, []);
 
-  //listen for escape key and close active modal
+  //listen for escape key and close active modal if pressed
   useEffect(() => {
     if (!activeModal) return;
 
@@ -106,6 +107,7 @@ function App() {
       <div className="page__content">
         <div className="page__main">
           <Routes>
+            {/* home page */}
             <Route
               path="/"
               element={
@@ -132,6 +134,7 @@ function App() {
                 </>
               }
             />
+            {/* saved-news page: only when user logged in */}
             <Route
               isLoggedIn={isLoggedIn}
               path="/saved-news"
@@ -150,17 +153,21 @@ function App() {
           </Routes>
         </div>
         <Footer />
-        <LoginModal
-          activeModal={activeModal === "login"}
-          closeActiveModal={closeActiveModal}
-          handleRegisterClick={handleRegisterClick}
-          handleLogin={handleLogin}
-        />
+
+        {/* modals */}
+
         <RegisterModal
           activeModal={activeModal === "register"}
           closeActiveModal={closeActiveModal}
           handleLoginClick={handleLoginClick}
           handleRegistration={handleRegistration}
+        />
+
+        <LoginModal
+          activeModal={activeModal === "login"}
+          closeActiveModal={closeActiveModal}
+          handleRegisterClick={handleRegisterClick}
+          handleLogin={handleLogin}
         />
 
         {showSuccess && (
