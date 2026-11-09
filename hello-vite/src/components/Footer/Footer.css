@@ -85,3 +85,12 @@
     margin: 0;
   }
 }
+
+@media (max-width: 550px) {
+  .footer__social-list {
+    align-items: start;
+    flex-direction: row;
+    margin: 0;
+    padding-top: 20px;
+  }
+}

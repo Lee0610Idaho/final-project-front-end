@@ -148,6 +148,29 @@
   filter: invert(1);
 }
 
+.header__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.header__hamburger_hidden {
+  visibility: hidden;
+}
+
+.header__hamburger-line {
+  width: 16px;
+  height: 2px;
+  background-color: white;
+}
+
+.header__hamburger-line_theme_dark {
+  background-color: black;
+}
+
 .header__overlay {
   position: fixed;
   inset: 0;
@@ -215,7 +238,7 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 470px) {
   .header__content {
     padding: 20px;
   }
@@ -226,6 +249,11 @@
 
   .header__nav-list {
     display: none;
+  }
+
+  .header__hamburger {
+    position: relative;
+    display: flex;
   }
 
   .header__mobile-menu {

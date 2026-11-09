@@ -90,6 +90,23 @@ function Header({
           </ul>
         </nav>
 
+        {/* Hamburger Icon */}
+        {/* Hamburger Icon */}
+        <button
+          className={`header__hamburger ${
+            isModalOpen ? "header__hamburger_hidden" : ""
+          }`}
+          aria-label="Menu"
+          onClick={toggleMenu}
+        >
+          <span
+            className={`header__hamburger-line header__hamburger-line_theme_${theme}`}
+          />
+          <span
+            className={`header__hamburger-line header__hamburger-line_theme_${theme}`}
+          />
+        </button>
+
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="header__overlay">
