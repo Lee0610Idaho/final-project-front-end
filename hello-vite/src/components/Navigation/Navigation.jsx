@@ -12,7 +12,7 @@ export default function Navigation({
 }) {
   return (
     <section className="navigation">
-      <h1 className="navigation__title">{"don't"} going on in the world?</h1>
+      <h1 className="navigation__title">{"What's"} going on in the world?</h1>
       <p className="navigation__description">
         Find the latest news on any topic and save them in your personal
         account.

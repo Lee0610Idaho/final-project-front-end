@@ -33,7 +33,8 @@
 }
 
 .search-bar__input:focus {
-  outline: none;
+  box-sizing: border-box;
+  border-bottom: solid 2px black;
   caret-color: #2f71e5;
 }
 
