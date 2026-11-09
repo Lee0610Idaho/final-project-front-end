@@ -18,7 +18,6 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [token, setToken] = useState("");
-  const [isLoading, setIsLoading] = useState("");
   const [savedArticles, setSavedArticles] = useState([]);
   const [showSuccess, setShowSuccess] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,7 +51,7 @@ function App() {
       .then((data) => {
         localStorage.setItem("jwt", data.token);
         setToken(data.token);
-        return checkToken(data.token);
+        return checkToken(token);
       })
       .then((userData) => {
         setCurrentUser(userData.data);

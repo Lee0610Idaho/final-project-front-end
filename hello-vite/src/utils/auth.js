@@ -1,10 +1,10 @@
-export const authorize = (email, password) => {
+export const authorize = () => {
   return new Promise((resolve) => {
     resolve({ token: "fake-jwt-token" });
   });
 };
 
-export const checkToken = (token) => {
+export const checkToken = () => {
   // Pretend we did a fetch request that gave us back a user
   return new Promise((resolve) => {
     resolve({

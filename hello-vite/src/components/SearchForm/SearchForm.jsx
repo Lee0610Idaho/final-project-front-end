@@ -1,5 +1,4 @@
 import "./SearchForm.css";
-import React, { useState } from "react";
 import { getNews } from "../../utils/api";
 
 function SearchForm({

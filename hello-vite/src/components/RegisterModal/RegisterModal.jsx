@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { useState } from "react";
 
 export default function RegisterModal({
   closeActiveModal,

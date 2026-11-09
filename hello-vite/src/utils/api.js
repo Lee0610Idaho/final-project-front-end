@@ -1,10 +1,10 @@
 export const newsApiBaseUrl =
-  process.env.NODE_ENV === "production"
+  import.meta.env.MODE === "production"
     ? "https://nomoreparties.co/news/v2/everything"
     : "https://newsapi.org/v2/everything";
 
 export const mainApiBaseUrl =
-  process.env.NODE_ENV === "production"
+  import.meta.env.MODE === "production"
     ? "https://your-production-server.com"
     : "http://localhost:3001";
 
@@ -56,19 +56,20 @@ export function saveArticle(article) {
 }
 
 export function fetchSavedArticles() {
-  return new Promise((resolve, reject) =>
+  return new Promise((resolve) =>
     resolve([
       {
+        //made up data
         _id: "65f7371e7bce9e7d331b11a0", // another one made up from the generator
-        url: article,
-        title: article.title,
-        imageUrl: article.imagUrl,
-        keyword: article.keyword,
-        text: article.description,
-        date: article.publishedAt,
-        source: article.source.name,
-        link: article.url,
-        image: article.urlToImage,
+        //url: article,
+        //title: article.title,
+        //imageUrl: article.imagUrl,
+        //keyword: article.keyword,
+        //text: article.description,
+        //date: article.publishedAt,
+        //source: article.source.name,
+        //link: article.url,
+        //image: article.urlToImage,
       },
     ]),
   );

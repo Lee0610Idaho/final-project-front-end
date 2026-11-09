@@ -1,6 +1,6 @@
 import "./Main.css";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Navigation from "../Navigation/Navigation";
 import NewsCard from "../NewsCard/NewsCard";
 import AboutAuthor from "../About/About";
@@ -16,7 +16,7 @@ function Main({
 }) {
   const [loading, setLoading] = useState(false);
   const [searchError, setSearchError] = useState("");
-  const [newsError, setNewsError] = useState("");
+  const [newsError] = useState("");
   const [hasSearched, setHasSearched] = useState(false);
   const [searchText, setSearchText] = useState("");
 

@@ -12,6 +12,9 @@ function NewsCard({
   keyword,
   isSavedNewsPage = false,
 }) {
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
+
   if (!article) return null;
   const {
     title,
@@ -21,9 +24,6 @@ function NewsCard({
     source,
     keyword: articleKeyword,
   } = article;
-
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [isSaved, setIsSaved] = useState(false);
 
   const handleSaveClick = () => {
     if (!isLoggedIn) return;

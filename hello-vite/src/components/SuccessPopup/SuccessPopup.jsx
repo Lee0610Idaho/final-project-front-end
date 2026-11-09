@@ -1,4 +1,3 @@
-import React from "react";
 import "./SuccessPopup.css";
 import Close from "../../assets/close.svg";
 
