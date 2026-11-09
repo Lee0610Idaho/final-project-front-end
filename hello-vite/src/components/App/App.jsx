@@ -41,6 +41,8 @@ function App() {
   // Registration function
   function handleRegistration({ email, password, username }) {
     console.log("printing registration data", email, password, username);
+    setShowSuccess(true);
+    closeActiveModal();
   }
 
   // Login function

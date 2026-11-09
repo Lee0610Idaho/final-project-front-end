@@ -80,7 +80,9 @@
   background-color: white;
   bottom: 270px;
   left: 10px;
-  width: 90px;
+  field-sizing: content;
+  width: 100%;
+  max-width: fit-content;
   padding: 10px 20px;
   position: relative;
   border-radius: 10px;
