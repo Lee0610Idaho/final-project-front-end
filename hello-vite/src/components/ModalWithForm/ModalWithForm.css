@@ -1,7 +1,7 @@
 @font-face {
   font-family: Roboto, Inter;
-  src: url("../../vendor/Fonts/roboto-500.woff2");
-  src: url("../../vendor/Fonts/inter-400-regular.woff");
+  src: url("../../fonts/roboto-500.woff2");
+  src: url("../../fonts/inter-400-regular.woff");
 }
 
 .modal {
@@ -26,10 +26,11 @@
 .modal__title {
   margin: 0;
   font-family: "Roboto";
+  height: 32px;
   font-size: 24px;
   font-weight: 900, bold;
-  line-height: 100px;
-
+  line-height: 100%;
+  padding: 34px 0px 22px;
   color: #1a1b22;
 }
 
@@ -50,7 +51,7 @@
 .modal__content {
   position: relative;
   background-color: #fff;
-  padding: 28px 28px 36px;
+  padding: 0px 28px 36px;
   max-width: 430px;
   width: 100%;
   box-sizing: border-box;
@@ -61,13 +62,13 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 0px;
   gap: 24px;
 }
 
 .modal__label {
   height: 52px;
-  margin-top: 20px;
+  margin-top: 0px;
   font-family: "Inter";
   font-weight: 400;
   font-size: 14px;
@@ -97,7 +98,7 @@
 .modal__submit {
   padding: 0;
   width: 358px;
-  height: 36px;
+  height: 64px;
   margin-top: 20px;
   font-family: "Roboto";
   font-weight: 400;

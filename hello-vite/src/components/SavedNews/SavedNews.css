@@ -1,7 +1,7 @@
 @font-face {
   font-family: Roboto;
-  src: url("../../vendor/Fonts/roboto-400-regular.woff");
-  src: url("../../vendor/Fonts/roboto-slab-400-regular.woff");
+  src: url("../../fonts/roboto-400-regular.woff");
+  src: url("../../fonts/roboto-slab-400-regular.woff");
 }
 
 .saved-news {

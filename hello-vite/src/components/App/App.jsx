@@ -95,7 +95,7 @@ function App() {
 
   //at the start of bootup, log in and fetch saved articles
   useEffect(() => {
-    const jwt = true; //for being simulating logging in
+    const jwt = false; //for being simulating logging in
     if (jwt) {
       checkToken(jwt)
         .then((userData) => {
