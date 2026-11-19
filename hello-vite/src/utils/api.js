@@ -5,7 +5,7 @@ export const newsApiBaseUrl =
 
 export const mainApiBaseUrl =
   import.meta.env.MODE === "production"
-    ? "https://your-production-server.com"
+    ? "https://api.jleenewsapi.jumpingcrab.com"
     : "http://localhost:3001";
 
 const NEWS_API_KEY = "f50f323a5b934931ba0d8e1feaf82916";
@@ -35,6 +35,64 @@ export async function getNews(searchText) {
     console.error("Fetch error:", err);
     return [];
   }
+}
+
+function processResponse(res) {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error ${res.status}`);
+}
+
+function request(url, options) {
+  return fetch(url, options).then(processResponse);
+}
+export function register(email, password, name) {
+  return request(`${mainApiBaseUrl}/signup`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+      password,
+      name,
+    }),
+  });
+}
+
+export function login(email, password) {
+  return request(`${mainApiBaseUrl}/signin`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+      password,
+    }),
+  });
+}
+
+export function getArticles(token) {
+  return request(`${mainApiBaseUrl}/articles`, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  });
+}
+
+export function deleteArticle(_articleId, token) {
+  return request(`${mainApiBaseUrl}/articles/${_articleId}`, {
+    method: "DELETE",
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  });
 }
 
 export function saveArticle(article) {
